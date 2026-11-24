@@ -25,7 +25,7 @@ function render(){const p=poems[index];$('title').textContent=p[0];$('author').t
 function highlight(){document.querySelectorAll('.verse').forEach(e=>e.classList.toggle('active',playing&&Number(e.dataset.line)===line))}
 function choose(i,step=1){if(!availableCount()){noUnlearned();return}const resume=playing;stop();const target=(i+poems.length)%poems.length;index=isLearned(target)?nextAvailable((target-step+poems.length)%poems.length,step):target;line=0;render();status('已切换至《'+poems[index][0]+'》');if(resume)start()}
 // Web Speech does not support phoneme overrides. Homophone aliases affect speech only.
-const pronunciationAliases=[["其一","其衣"],["一段","宜段"],["一簇","宜簇"],["一片","宜片"],["一岁","宜岁"],["一径","宜径"],["一道","宜道"],["一色","宜色"],["一日","宜日"],["一灯","义灯"],["一人","义人"],["一青","义青"],["一年","义年"],["一畦","义畦"],["楚塞三湘接","楚赛三湘接"],["嫦娥应悔偷灵药","嫦娥英悔偷灵药"],["只留清气满乾坤","止留清气满乾坤"],["欲饮琵琶马上催","欲饮枇杷马上催"],["最喜小儿亡赖","最喜小儿无赖"],["只把春来报","纸把春来报"],["人未还","人未环"],["日还","日环"],["铺水中","扑水中"]];
+const pronunciationAliases=[["其一","其衣"],["一段","宜段"],["一簇","宜簇"],["一片","宜片"],["一岁","宜岁"],["一径","宜径"],["一道","宜道"],["一色","宜色"],["一日","宜日"],["一灯","义灯"],["一人","义人"],["一青","义青"],["一年","义年"],["一畦","义畦"],["楚塞三湘接","楚赛三湘接"],["嫦娥应悔偷灵药","嫦娥英悔偷灵药"],["只留清气满乾坤","止留清气满乾坤"],["欲饮琵琶马上催","欲饮枇杷马上催"],["最喜小儿亡赖","最喜小儿无赖"],["只把春来报","纸把春来报"],["人未还","人未环"],["日还","日环"],["铺水中","扑水中"],["田园杂兴","田园杂幸"]];
 const spokenTitles={
   '无题·大江歌罢掉头东':'无题',
   '凉州词·葡萄美酒夜光杯':'凉州词',
